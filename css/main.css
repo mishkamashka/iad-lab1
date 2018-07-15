@@ -12,11 +12,24 @@ html, body {
 }
 
 .header {
-  /* margin-top: 60px; */
   height: 60px;
+  /* padding: 60px; */
   width: 100%;
   background: #5ccccc;
   position: fixed;
+  border-bottom: 5px solid #3c8484;
+  display: grid;
+  grid-template-columns: 200px auto 200px;
+}
+
+.header__block__var {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.header__block__author {
+  grid-column-start: 3;
+  grid-column-end: 4;
 }
 
 .footer__img__block {
@@ -50,6 +63,8 @@ html, body {
 }
 
 .all__site__wrap {
+  padding-top: 100px;
+  height: 100%;
   display: grid;
   grid-template-columns: auto 70% auto;
 }
@@ -60,10 +75,10 @@ html, body {
 }
 
 .wrap__img__graph {
-  padding-top: 120px;
   text-align: center;
   margin: auto;
   grid-column-start: 2;
+  position: ;
 }
 
 .footer {
@@ -71,6 +86,6 @@ html, body {
   grid-template-columns: auto 1fr 1fr auto;
   background: black;
   height: 200px;
-  position: absolute;
+  position: relative;
   width: 100%;
 }
