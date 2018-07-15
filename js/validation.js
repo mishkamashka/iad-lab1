@@ -14,3 +14,11 @@ function validateForm() {
 function isNumeric(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 }
+
+function charCheck() {
+  document.getElementById("coordinate_y").onkeypress = function(e) {
+    var chr = String.fromCharCode(e.which);
+    if ("1234567890.-".indexOf(chr) < 0)
+        return false;
+    }
+}
