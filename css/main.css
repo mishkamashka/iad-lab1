@@ -67,6 +67,7 @@ a:link {
   margin: auto;
   display: flex;
   flex-direction: column;
+  padding-right: 22px;
 }
 
 .wrap__img__graph {
@@ -129,6 +130,10 @@ a:link {
 
 .input__global--margin {
   margin: 4%;
+}
+
+.input__global--margin:first-child {
+  margin-top: 8%;
 }
 
 /* BUTTONS  */
