@@ -29,7 +29,8 @@
       <img src="./image/areas.png">
     </div>
     <div class="wrap__content">
-      <select class="input__global--margin input__global--size" id="coordinate_x">
+      <select class="select input__global--margin input__global--size" id="coordinate_x">
+        <option value="" disabled selected>Choose 'x' coordinate</option>
         <option value="-3">-3</option>
         <option value="-2">-2</option>
         <option value="-1">-1</option>
@@ -40,9 +41,10 @@
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
-      <input class="input__global--margin input__global--size" type="text" name="coordinate_y" id="coordinate_y" onclick="charCheck()"
-      />
-      <select class="input__global--margin input__global--size" id="radius">
+      <input class="input__text input__global--margin input__global--size" placeholder="enter 'y' coordinate" type="text" name="coordinate_y"
+        id="coordinate_y" onclick="charCheck()" />
+      <select class="select input__global--margin input__global--size" id="radius">
+        <option value="" disabled selected>Choose radius</option>
         <option value="1">1</option>
         <option value="1.5">1.5</option>
         <option value="2">2</option>
@@ -60,7 +62,7 @@
         <img class="footer__icon" src="./image/vk.d89817ac.svg">
       </a>
       <a href="https://github.com/mishkamashka">
-          <img class="footer__icon" src="./image/github.svg">
+        <img class="footer__icon" src="./image/github.svg">
       </a>
     </div>
   </footer>
