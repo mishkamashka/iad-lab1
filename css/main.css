@@ -1,3 +1,4 @@
+/* GLOBAL ELEMENTS */
 * {
   box-sizing: border-box;
 }
@@ -8,12 +9,14 @@ html, body {
   height: 100%;
   width: 100%;
   background: #313030;
-  font-family: proxima-nova, sans-serif;
+}
+
+a:link {
+  text-decoration: none;
 }
 
 .header {
   height: 60px;
-  /* padding: 60px; */
   width: 100%;
   background: #5ccccc;
   position: fixed;
@@ -22,6 +25,9 @@ html, body {
   grid-template-columns: 46px auto auto auto;
   text-transform: uppercase;
   letter-spacing: 3px;
+  font-family: sans-serif;
+  color: black;
+  font-size: 12pt;
 }
 
 .header__block__var {
@@ -36,7 +42,6 @@ html, body {
   grid-column-end: 5;
   align-self: center;
   padding-right: 20px;
-  /* right: 0; */
   text-align: end;
 }
 
@@ -46,36 +51,6 @@ html, body {
   height: 100%;
   padding-left: 20px;
   padding-top: 5px;
-}
-
-.footer__img__block {
-  margin: auto;
-  margin-right: 0;
-  padding-right: 66px;
-  grid-column-start: 2;
-  grid-column-end: 3;
-}
-
-.footer__img__block img {
-  width: 90px;
-  height: 100px;
-}
-
-.footer__text__block {
-  color: white;
-  border-left: 3px solid;
-  line-height: 70px;
-  margin: auto;
-  /* margin-left: 0; */
-  font-size: 15pt;
-  padding-left: 66px;
-  display: flex;
-  /* justify-content: left; */
-  /* align-items: center; */
-  grid-column-start: 3;
-  margin-left: 0;
-  grid-column-end: 4;
-  /* text-align: center; */
 }
 
 .all__site__wrap {
@@ -101,13 +76,34 @@ html, body {
 
 .footer {
   display: grid;
-  grid-template-columns: auto 1fr 1fr auto;
+  grid-template-columns: 1fr auto auto 1fr;
   background: black;
   height: 250px;
   position: relative;
   width: 100%;
   text-transform: uppercase;
   letter-spacing: 3px;
+  font-size: 12pt;
+  text-align: end;
+}
+
+.footer__links__block {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  color: white;
+  text-align: center;
+  align-self: center;
+  border-right: 1px solid;
+  border-left: 1px solid;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.footer__icon {
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  margin: 11px;
 }
 
 /* INPUT FIELDS */
@@ -127,9 +123,7 @@ html, body {
 .btn {
   box-shadow: 0 2px 5px #00000029, 0 3px 6px #0000001a;
   z-index: 2;
-  /* color: #fff; */
   text-decoration: none;
-  /* background: #7d87bb; */
   background: #5bcccc;
   border: 0;
   position: relative;
