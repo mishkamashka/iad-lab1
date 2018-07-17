@@ -29,6 +29,7 @@ a:link {
   font-family: sans-serif;
   color: black;
   font-size: 12pt;
+  z-index: 5;
 }
 
 .header__block__var {
@@ -78,6 +79,7 @@ a:link {
 
 .wrap__table {
   grid-column-start: 2;
+  justify-self: center;
 }
 
 .footer {
@@ -117,6 +119,7 @@ a:link {
 .select {
   text-align-last: center;
   background: #5bcccc;
+  cursor: pointer;
 }
 
 .input__text, .select {
