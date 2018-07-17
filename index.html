@@ -6,15 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="./css/main.css">
   <link rel="stylesheet" type="text/css" href="./css/table.css">
+  <link rel="stylesheet" type="text/css" href="./css/overlay.css">
   <title>Лабораторная работа №1</title>
   <link href="./image/icon.png" rel="Shortcut Icon">
   <script src="./js/validation.js"></script>
+  <script src="./js/overlay.js"></script>
 </head>
 
 <body>
+  <div id="about__panel" class="overlay" style="height: 0%;">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <a>Анисимова Мария</a>
+      <a>группа P3210</a>
+    </div>
+  </div>
   <header class="header">
     <div class="header__block__img">
-      <img class="header__icon" src="./image/bear.png">
+      <img class="header__icon" onclick="showNav()" src="./image/bear.png">
     </div>
     <div class="header__block__var">
       Вариант 28001
