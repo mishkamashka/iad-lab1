@@ -51,4 +51,15 @@ function pointBelongToArea($x, $y, $radius)
         (($x >= -$radius) && ($x <= 0) && ($y <= $radius / 2.0) && ($y >= 0) && ($y <= $x + $radius / 2.0)));
 }
 
+function isFormValid() {
+      if (!isNumeric(y) || y < -3 || y > 5) {
+        alert("Значение координаты У должно быть числом в диапазоне [-3..5]");
+        return false;
+      }
+      return true;
+  }
 
+function isNumeric(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+  

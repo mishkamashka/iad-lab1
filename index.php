@@ -38,7 +38,7 @@
       <img class="graph__image" src="./image/areas.png">
     </div>
     <div class="wrap__content">
-      <form name="form" action="action.php" onsubmit="return isFormValid()" method="get">
+      <form name="form" action="action.php" onsubmit="return isFormFilled()" method="get">
         <select class="select input__global--margin input__global--size" id="coordinate_x">
           <option value="" disabled selected>Choose 'x' coordinate</option>
           <option value="-3">-3</option>
