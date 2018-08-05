@@ -38,30 +38,31 @@
       <img class="graph__image" src="./image/areas.png">
     </div>
     <div class="wrap__content">
-      <select class="select input__global--margin input__global--size" id="coordinate_x">
-        <option value="" disabled selected>Choose 'x' coordinate</option>
-        <option value="-3">-3</option>
-        <option value="-2">-2</option>
-        <option value="-1">-1</option>
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <input class="input__text input__global--margin input__global--size" placeholder="enter 'y' coordinate" type="text" name="coordinate_y"
-        id="coordinate_y" onclick="charCheck()" />
-      <select class="select input__global--margin input__global--size" id="radius">
-        <option value="" disabled selected>Choose radius</option>
-        <option value="1">1</option>
-        <option value="1.5">1.5</option>
-        <option value="2">2</option>
-        <option value="2.5">2.5</option>
-        <option value="3">3</option>
-      </select>
-      <button class="btn btn--font input__global--margin input__global--size" onclick="validateForm()">press me </button>
-
+      <form name="form" action="action.php" onsubmit="return isFormValid()" method="get">
+        <select class="select input__global--margin input__global--size" id="coordinate_x">
+          <option value="" disabled selected>Choose 'x' coordinate</option>
+          <option value="-3">-3</option>
+          <option value="-2">-2</option>
+          <option value="-1">-1</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <input class="input__text input__global--margin input__global--size" placeholder="enter 'y' coordinate" type="text" name="coordinate_y"
+          id="coordinate_y" onclick="charCheck()" />
+        <select class="select input__global--margin input__global--size" id="radius">
+          <option value="" disabled selected>Choose radius</option>
+          <option value="1">1</option>
+          <option value="1.5">1.5</option>
+          <option value="2">2</option>
+          <option value="2.5">2.5</option>
+          <option value="3">3</option>
+        </select>
+        <button type="submit" class="btn btn--font input__global--margin input__global--size">press me </button>
+      </form>
     </div>
     <div class="wrap__table table ">
       <div class="row header__table">
@@ -78,20 +79,30 @@
           Result
         </div>
       </div>
-      <div class="row">
-        <div class="cell" data-title="X">
-          -2
+      <?php
+          if (isset($answer)) {
+              echo $answer;
+          }
+      ?>
+        <div class="row">
+          <div class="cell" data-title="X">
+            -2
+          </div>
+          <div class="cell" data-title="Y">
+            2
+          </div>
+          <div class="cell" data-title="R">
+            1.5
+          </div>
+          <div class="cell" data-title="Result">
+            Success
+          </div>
         </div>
-        <div class="cell" data-title="Y">
-          2
-        </div>
-        <div class="cell" data-title="R">
-          1.5
-        </div>
-        <div class="cell" data-title="Result">
-          Success
-        </div>
-      </div>
+        <?php
+        if (isset($errorMsg)) {
+              echo $errorMsg;
+          }
+        ?>
     </div>
   </div>
 

@@ -1,4 +1,4 @@
-function validateForm() {
+function isFormValid() {
   var y = document.getElementById('coordinate_y').value;
     if (y == "") {
         alert("Не введено значение координаты У");
