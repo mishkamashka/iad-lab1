@@ -106,8 +106,6 @@ a:link {
 
 .all__site__wrap {
   padding-top: 100px;
-  /* height: 100%; */
-  display: grid;
   grid-template-columns: auto 70% auto;
   padding-bottom: 40px;
 }
@@ -119,11 +117,9 @@ a:link {
 }
 
 .wrap__content {
-  grid-column-start: 2;
   margin: auto;
   display: flex;
   flex-direction: column;
-  padding-right: 22px;
 }
 
 .wrap__table {
@@ -146,7 +142,8 @@ a:link {
   }
   .all__site__wrap {
     padding-top: 120px;
-    display: grid;
+    display: flex;
+    flex-direction:  column;
     grid-template-columns: 100%;
     /* TODO: CHANGE THIS VALUE */
     padding-bottom: 50px;
@@ -240,15 +237,17 @@ a:link {
 }
 
 .input__global--margin {
-  margin: 4%;
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .input__global--margin:first-child {
-  margin-top: 8%;
+  margin-top: 50px;
 }
 
 .input__global--margin:last-child {
-  margin-bottom: 8%;
+  margin-bottom: 50px;
 }
 
 /* BUTTONS  */

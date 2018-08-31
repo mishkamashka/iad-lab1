@@ -37,8 +37,7 @@
     <div class="wrap__img__graph">
       <img class="graph__image" src="./image/areas.png">
     </div>
-    <div class="wrap__content">
-      <form name="form" action="action.php" onsubmit="return isFormFilled()" method="get">
+      <form name="form" action="action.php" onsubmit="return isFormFilled()" method="get" style="display: flex; flex-direction: column;">
         <select class="select input__global--margin input__global--size" id="coordinate_x" name="coordinate_x">
           <option value="" disabled selected>Choose 'x' coordinate</option>
           <option value="-3">-3</option>
@@ -63,7 +62,6 @@
         </select>
         <button type="submit" class="btn btn--font input__global--margin input__global--size">press me </button>
       </form>
-    </div>
     <div class="wrap__table table ">
       <div class="row header__table">
         <div class="cell">
