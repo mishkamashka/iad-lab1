@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8"></meta>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="./css/main.css">
   <link rel="stylesheet" type="text/css" href="./css/table.css">
@@ -60,8 +60,15 @@
           <option value="2.5">2.5</option>
           <option value="3">3</option>
         </select>
-        <button type="submit" class="btn btn--font input__global--margin input__global--size">press me </button>
-      </form>
+        <button type="submit" class="btn btn--font input__global--margin input__global--size">check </button>
+      <div class="error__msg">
+      <?php
+        if (isset($errorMsg)) {
+            echo $errorMsg;
+        }
+        ?>
+      </div>
+    </form>
     <div class="wrap__table table ">
       <div class="row header__table">
         <div class="cell">
@@ -81,28 +88,19 @@
           if (isset($answer)) {
               echo $answer;
           }
-      ?> 
-        <?php
-        if (isset($errorMsg)) {
-            echo $errorMsg;
-        }
-        //if (isset($time)) {
-        //    echo $time;
-        //}
-        //echo "<p>Текущее время: " . date("G:i:s") . "</p>";
-        ?>
+      ?>
     </div>
   </div>
 
   <footer class="footer">
-    <div class="footer__links__block">
-      <p>You should follow me at:</p>
-      <a href="https://vk.com/i___mishkamashka___i">
-        <img class="footer__icon" src="./image/vk.d89817ac.svg">
-      </a>
-      <a href="https://github.com/mishkamashka">
-        <img class="footer__icon" src="./image/github.svg">
-      </a>
+    <div class="footer__block">
+      <p>Measured time:<br />
+      <?php
+      if (isset($time)) {
+          echo $time;
+      }
+      ?>
+      </p>
     </div>
   </footer>
 

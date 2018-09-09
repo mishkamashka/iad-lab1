@@ -1,18 +1,18 @@
 <?php
     // start measuring script time
     $begin = microtime(1);
-if (isFormValid() && isset($_GET['coordinate_x']) && isset($_GET['radius'])) {
+if (isset($_GET['coordinate_x']) && isset($_GET['radius']) && isset($_GET['coordinate_y']) && isFormValid()) {
     // init some variables
     $result = "";
     $line = "";
-    $point = new Point((string)$_GET['coordinate_x'], floatval((string)$_GET['coordinate_y']));
+    $point = new Point((string)$_GET['coordinate_x'], (string)$_GET['coordinate_y']);
     $radius = (string)$_GET['radius'];
 
     // complete answer
         $answer = 
     '<div class="row">' 
         . '<div class="cell" data-title="X">' . $point->x . '</div>' 
-        . '<div class="cell" data-title="Y">' . $point->y . '</div>' 
+        . '<div class="cell" data-title="Y">' . round(($point->y), 5) . '</div>' 
         . '<div class="cell" data-title="R">' . $radius . '</div>'
         . '<div class="cell" data-title="Result">' . ($point->isBelongToArea($radius) ? 'success' : 'failure') . '</div>' 
     . '</div>';
@@ -28,13 +28,14 @@ if (isFormValid() && isset($_GET['coordinate_x']) && isset($_GET['radius'])) {
     }
 } else {
     $file = fopen("answers", "r");
-    $errorMsg = "Значения выходят за диапазон";
+    $errorMsg = "Некорректные входные значения";
     $answer = "";
     while (($line = fgets($file)) !== false) {
         $answer .= $line;
     }
 }
-   // end time measuring
+
+// end time measuring
 $end = microtime(1);
 $time = ($end - $begin) * 100000;
 
@@ -58,10 +59,12 @@ class Point{
 }
 
 function isFormValid() {
-    $y = (string)$_GET['coordinate_y'];  
-    if (isset($y) && !is_numeric($y) || $y < -3 || $y > 5) {
-        return false;
+    $y = (float)$_GET['coordinate_y'];
+    $x = (int)$_GET['coordinate_x'];
+    $radius = (int)$_GET['radius'];
+    if (is_numeric($y) && $y >= -3 && $y <= 5 && is_numeric($x) && is_numeric($radius)) {
+        return true;
       }
-      return true;
+    return false;
 }
   
