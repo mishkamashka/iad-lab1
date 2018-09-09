@@ -5,7 +5,7 @@ if (isFormValid() && isset($_GET['coordinate_x']) && isset($_GET['radius'])) {
     // init some variables
     $result = "";
     $line = "";
-    $point = new Point((string)$_GET['coordinate_x'], (string)$_GET['coordinate_y']);
+    $point = new Point((string)$_GET['coordinate_x'], floatval((string)$_GET['coordinate_y']));
     $radius = (string)$_GET['radius'];
 
     // complete answer
