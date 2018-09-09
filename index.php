@@ -97,7 +97,8 @@
       <p>Measured time:<br />
       <?php
       if (isset($time)) {
-          echo $time;
+          echo round($time, 4);
+          echo " ms";
       }
       ?>
       </p>
