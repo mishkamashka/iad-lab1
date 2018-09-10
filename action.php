@@ -28,7 +28,7 @@ if (isset($_GET['coordinate_x']) && isset($_GET['radius']) && isset($_GET['coord
     }
 } else {
     $file = fopen("answers", "r");
-    $errorMsg = "Некорректные входные значения";
+    $errorMsg = "Invalid input values";
     $answer = "";
     while (($line = fgets($file)) !== false) {
         $answer .= $line;
@@ -59,9 +59,9 @@ class Point{
 }
 
 function isFormValid() {
-    $y = (float)$_GET['coordinate_y'];
-    $x = (int)$_GET['coordinate_x'];
-    $radius = (int)$_GET['radius'];
+    $y = (string)$_GET['coordinate_y'];
+    $x = (string)$_GET['coordinate_x'];
+    $radius = (string)$_GET['radius'];
     if (is_numeric($y) && $y >= -3 && $y <= 5 && is_numeric($x) && is_numeric($radius)) {
         return true;
       }
